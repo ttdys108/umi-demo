@@ -1,7 +1,8 @@
 
-
 // ref: https://umijs.org/config/
 export default {
+  // base: '/site',
+  // publicPath: '/site/',  //js, css url前缀
   theme: './theme.js',
   treeShaking: true,
   // routes: [
@@ -13,11 +14,17 @@ export default {
   //     ]
   //   }
   // ],
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8889',
+      pathRewrite: { '/api': ''}
+    }
+  },
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
-      dva: false,
+      dva: true,
       dynamicImport: true,
       title: 'umi-app',
       dll: false,

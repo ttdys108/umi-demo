@@ -1,15 +1,29 @@
 import styles from './index.css';
 
 import { Layout } from 'antd';
+import SiderBar from '../components/siderbar'
+import { getConfig } from "@/config";
+
 const { Header, Footer, Sider, Content } = Layout;
+const tokenKey = getConfig('loginTokenKey');
 
 function MainLayout(props) {
+  if(props.location.pathname === '/login') {
+    return (
+      <div className={'h-100'}>
+        { props.children }
+      </div>
+    )
+  }
+
   return (
-    <div>
+    <div className={'h-100'}>
       <Layout>
-        <Header>Header</Header>
+        <Sider theme={"dark"} width={170}>
+          <SiderBar/>
+        </Sider>
         <Layout>
-          <Sider>Slider</Sider>
+          <Header className="bg-white">Header</Header>
           <Content>
             { props.children }
           </Content>

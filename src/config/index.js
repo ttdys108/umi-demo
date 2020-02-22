@@ -1,12 +1,16 @@
 const Config = {
   common: {
-    tokenCookieAttr: '__login_token'
+    loginTokenKey: '__login_token'
   },
   dev: {
-    hostname: 'http://localhost:8889'
+    hostname: 'http://localhost:8000',
+    basePath: '/',
+    publicPath: '/',
   },
   prod: {
-    hostname: 'http://121.36.137.124:8889'
+    hostname: 'http://121.36.137.124:80',
+    basePath: '/site',
+    publicPath: '/site/',
   },
 
 
