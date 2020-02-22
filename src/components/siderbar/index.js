@@ -11,8 +11,10 @@ export default function (props) {
         <span className="nav-text">我的</span>
       </Menu.Item>
       <Menu.Item key="2">
-        <Icon type="video-camera" />
-        <span className="nav-text">nav 2</span>
+        <Link to="/map">
+          <Icon type="upload" />
+          <span className="nav-text">地图</span>
+        </Link>
       </Menu.Item>
       <Menu.Item key="3">
         <Icon type="upload" />
