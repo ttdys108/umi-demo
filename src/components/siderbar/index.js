@@ -10,12 +10,28 @@ export default function (props) {
         <Icon type="user" />
         <span className="nav-text">我的</span>
       </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/map">
-          <Icon type="upload" />
-          <span className="nav-text">地图</span>
-        </Link>
-      </Menu.Item>
+      <SubMenu
+        key="2"
+        title={
+          <span>
+                <Icon type="map" />
+                <span>地图</span>
+              </span>
+        }
+      >
+        <Menu.Item key="2-1">
+          <Link to="/map/china">
+            <Icon type="upload" />
+            <span className="nav-text">概况</span>
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="2-2">
+          <Link to="/map/statistic">
+            <Icon type="user" />
+            <span className="nav-text">统计</span>
+          </Link>
+        </Menu.Item>
+      </SubMenu>
       <Menu.Item key="3">
         <Icon type="upload" />
         <span className="nav-text">nav 3</span>

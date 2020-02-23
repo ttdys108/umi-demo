@@ -19,7 +19,7 @@ function MainLayout(props) {
   return (
     <div className={'h-100'}>
       <Layout>
-        <Sider theme={"dark"} width={170}>
+        <Sider theme={"dark"} width={170} style={{'minHeight': '-webkit-fill-available'}}>
           <SiderBar/>
         </Sider>
         <Layout>
